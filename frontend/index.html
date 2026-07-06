@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CraveWise AI</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Petit+Formal+Script&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --bg:#FBF2E9;
+    --panel:#FFFCF8;
+    --panel-2:#F7E4DC;
+    --rule:#F0D7CD;
+    --ink:#3B2E35;
+    --muted:#8F6F63;
+
+    --pink:#F3B7C2;
+    --pink-deep:#E38CA0;
+
+    --wine:#7C2A3B;
+    --wine-deep:#5E1F2C;
+
+    --butter:#F5DFA0;
+    --butter-deep:#C98A2E;
+
+    --sage:#A7C4A0;
+    --sage-deep:#5E8258;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter", ui-sans-serif, system-ui, sans-serif;
+    line-height:1.55;
+  }
+  h1,h2,h3{
+    font-family:"Fraunces", Georgia, serif;
+    font-weight:600;
+    letter-spacing:0.1px;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:32px 20px 80px;}
+
+  header.hero{
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--rule);
+    border-radius:24px;
+    padding:40px 36px 36px;
+    margin-bottom:36px;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(243,183,194,0.55), transparent 42%),
+      radial-gradient(circle at 88% 12%, rgba(245,223,160,0.6), transparent 46%),
+      radial-gradient(circle at 78% 95%, rgba(167,196,160,0.45), transparent 42%),
+      var(--panel);
+  }
+  .eyebrow{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow .logotype{
+    font-family:"Petit Formal Script", cursive;
+    font-size:30px;
+    color:var(--wine);
+    line-height:1;
+  }
+  .eyebrow .tag{
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-size:11px;
+    color:var(--muted);
+    font-weight:600;
+  }
+  header.hero h1{font-size:40px;margin:0 0 10px;color:var(--ink);position:relative;}
+  header.hero p{color:var(--muted);margin:0;font-size:16px;max-width:560px;position:relative;}
+
+  .card{
+    background:var(--panel);
+    border:1px solid var(--rule);
+    border-radius:18px;
+    padding:24px 26px;
+    margin-bottom:22px;
+    box-shadow:0 4px 16px rgba(124,42,59,0.06);
+  }
+  .card h2{font-size:19px;margin:0 0 16px;color:var(--wine);}
+  label{
+    display:block;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    color:var(--muted);
+    margin-bottom:5px;
+    font-weight:600;
+  }
+  .field{margin-bottom:14px;}
+  input[type=text], input[type=number], select, textarea{
+    width:100%;
+    background:var(--panel-2);
+    border:1px solid var(--rule);
+    color:var(--ink);
+    padding:10px 12px;
+    border-radius:10px;
+    font-size:14px;
+    font-family:inherit;
+    transition:border-color .15s, box-shadow .15s;
+  }
+  input:focus, select:focus, textarea:focus{
+    outline:none;
+    border-color:var(--pink-deep);
+    box-shadow:0 0 0 3px rgba(227,140,160,0.25);
+  }
+  textarea{resize:vertical;min-height:52px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .checks{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px;}
+  .chip{
+    background:var(--panel);
+    border:1px solid var(--rule);
+    padding:7px 14px;
+    border-radius:999px;
+    font-size:13px;
+    cursor:pointer;
+    user-select:none;
+    color:var(--muted);
+    transition:background .15s, color .15s, border-color .15s;
+  }
+  .chip.active{
+    background:var(--pink);
+    color:var(--wine-deep);
+    border-color:var(--pink-deep);
+    font-weight:600;
+  }
+  button.primary{
+    background:linear-gradient(135deg, var(--pink-deep), var(--wine));
+    color:#FFF8F5;
+    border:none;
+    padding:13px 26px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:15px;
+    cursor:pointer;
+    margin-top:6px;
+    font-family:inherit;
+    box-shadow:0 3px 10px rgba(124,42,59,0.22);
+    transition:filter .15s, transform .15s;
+  }
+  button.primary:hover{filter:brightness(1.06);transform:translateY(-1px);}
+
+  #results{margin-top:8px;}
+  .recipe{
+    display:grid;
+    grid-template-columns:1fr 190px;
+    gap:18px;
+    border:1px solid var(--rule);
+    border-radius:18px;
+    padding:20px 22px;
+    background:var(--panel);
+    margin-bottom:16px;
+    box-shadow:0 4px 16px rgba(124,42,59,0.06);
+  }
+  .recipe h3{margin:0 0 6px;font-size:21px;color:var(--wine);}
+  .explain{font-size:14px;color:var(--muted);margin:6px 0 12px;}
+  .stats{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--muted);}
+  .stats b{color:var(--ink);}
+  .scores{display:flex;flex-direction:column;gap:8px;justify-content:center;}
+  .score-row{font-size:12px;color:var(--muted);}
+  .bar{height:7px;border-radius:4px;background:var(--panel-2);overflow:hidden;margin-top:3px;}
+  .bar > div{height:100%;background:var(--sage);border-radius:4px;}
+  .missing{font-size:13px;margin-top:8px;color:var(--wine);}
+  .missing b{color:var(--ink);}
+
+  table.compare{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px;}
+  table.compare th, table.compare td{
+    border-bottom:1px solid var(--rule);
+    padding:10px 10px;
+    text-align:left;
+  }
+  table.compare th{color:var(--wine);font-weight:600;}
+  .status{font-size:13px;color:var(--muted);margin-top:6px;}
+  .footnote{font-size:12px;color:var(--muted);margin-top:36px;border-top:1px solid var(--rule);padding-top:16px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">
+      <span class="logotype">CraveWise</span>
+      <span class="tag">AI · Prototype</span>
+    </div>
+    <h1>Don't just tell me what to eat.</h1>
+    <p>Tell CraveWise what you're craving, what's in your pantry, and your health goals — it runs the full health → craving → pantry → budget decision pipeline and explains exactly why it picked what it picked.</p>
+  </header>
+
+  <div class="card">
+    <h2>1 · Your health profile</h2>
+    <div class="grid2">
+      <div class="field">
+        <label>Goal</label>
+        <select id="goal">
+          <option value="weight_loss">Weight loss</option>
+          <option value="muscle_gain">Muscle gain</option>
+          <option value="maintenance">Maintenance</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Health conditions (tap to toggle)</label>
+        <div class="checks" id="conditions">
+          <div class="chip" data-val="diabetes">Diabetes</div>
+          <div class="chip" data-val="pcos">PCOS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>2 · What are you craving, and what do you have?</h2>
+    <div class="field">
+      <label>Craving</label>
+      <input type="text" id="craving" placeholder="e.g. pizza, butter chicken, khichdi" value="pizza" />
+    </div>
+    <div class="field">
+      <label>Pantry ingredients (comma-separated)</label>
+      <textarea id="pantry" placeholder="e.g. paneer, tomato, onion, cheese">paneer, tomato, onion, cheese, whole wheat flour</textarea>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label>Budget (₹)</label>
+        <input type="number" id="budget" value="300" />
+      </div>
+      <div class="field">
+        <label>Time available (minutes)</label>
+        <input type="number" id="time" value="30" />
+      </div>
+    </div>
+    <button class="primary" onclick="getRecommendations()">Get my recommendations</button>
+    <div class="status" id="status"></div>
+  </div>
+
+  <div id="results"></div>
+
+  <div class="footnote">
+    Rule-based decision engine running locally via FastAPI — no external API key required.
+    Swap in Gemini / Spoonacular / USDA calls in <code>backend/engine.py</code> and <code>backend/data.py</code> once you have keys. See README for details.
+  </div>
+</div>
+
+<script>
+const API_BASE = "https://cravewise-backend.onrender.com";
+
+document.querySelectorAll("#conditions .chip").forEach(chip => {
+  chip.addEventListener("click", () => chip.classList.toggle("active"));
+});
+
+async function getRecommendations(){
+  const statusEl = document.getElementById("status");
+  const resultsEl = document.getElementById("results");
+  statusEl.textContent = "Thinking through health, craving, pantry, budget, and time…";
+  resultsEl.innerHTML = "";
+
+  const conditions = [...document.querySelectorAll("#conditions .chip.active")].map(c => c.dataset.val);
+  const pantry = document.getElementById("pantry").value.split(",").map(s => s.trim()).filter(Boolean);
+
+  const payload = {
+    profile: {
+      goal: document.getElementById("goal").value,
+      health_conditions: conditions
+    },
+    craving: document.getElementById("craving").value,
+    pantry: pantry,
+    budget: Number(document.getElementById("budget").value) || null,
+    time_limit_minutes: Number(document.getElementById("time").value) || null
+  };
+
+  try{
+    const res = await fetch(`${API_BASE}/api/recommend`, {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(payload)
+    });
+    if(!res.ok) throw new Error(`Server returned ${res.status}`);
+    const data = await res.json();
+    statusEl.textContent = `${data.count} option(s) found.`;
+    renderResults(data.recommendations);
+  }catch(err){
+    statusEl.textContent = "Couldn't reach the backend. Is it running at " + API_BASE + "? (" + err.message + ")";
+  }
+}
+
+function bar(pct, color){
+  return `<div class="bar"><div style="width:${pct}%; background:${color || ''}"></div></div>`;
+}
+
+function renderResults(list){
+  const resultsEl = document.getElementById("results");
+  if(!list.length){
+    resultsEl.innerHTML = "<p>No matches — try loosening your budget or time constraints.</p>";
+    return;
+  }
+
+  let html = "";
+  list.forEach(r => {
+    const missing = r.missing_ingredients.length
+      ? `<div class="missing"><b>Missing from pantry:</b> ${r.missing_ingredients.join(", ")}</div>`
+      : `<div class="missing" style="color:var(--sage-deep)">You have everything you need.</div>`;
+
+    const swaps = Object.keys(r.healthy_swaps).length
+      ? `<div class="missing" style="color:var(--butter-deep)"><b>Healthy swap:</b> ${Object.entries(r.healthy_swaps).map(([a,b]) => `${a} → ${b}`).join(", ")}</div>`
+      : "";
+
+    html += `
+      <div class="recipe">
+        <div>
+          <h3>${r.name}</h3>
+          <div class="explain">${r.explanation}</div>
+          <div class="stats">
+            <span><b>${r.calories}</b> kcal</span>
+            <span><b>${r.protein}g</b> protein</span>
+            <span><b>${r.carbs}g</b> carbs</span>
+            <span><b>₹${r.cost}</b></span>
+            <span><b>${r.time_minutes} min</b></span>
+            <span><b>${r.difficulty}</b></span>
+          </div>
+          ${missing}
+          ${swaps}
+        </div>
+        <div class="scores">
+          <div class="score-row">Health score: ${r.health_score}${bar(r.health_score, "#A7C4A0")}</div>
+          <div class="score-row">Craving match: ${r.craving_score}${bar(r.craving_score, "#F5DFA0")}</div>
+          <div class="score-row">Pantry match: ${r.pantry_match_pct}%${bar(r.pantry_match_pct, "#E38CA0")}</div>
+          <div class="score-row"><b>Total score: ${r.total_score}</b></div>
+        </div>
+      </div>`;
+  });
+
+  html += buildComparisonTable(list);
+  resultsEl.innerHTML = html;
+}
+
+function buildComparisonTable(list){
+  let rows = list.map(r => `
+    <tr>
+      <td>${r.name}</td>
+      <td>${r.health_score}</td>
+      <td>${r.craving_score}</td>
+      <td>₹${r.cost}</td>
+      <td>${r.time_minutes} min</td>
+      <td>${r.total_score}</td>
+    </tr>`).join("");
+
+  return `
+    <div class="card">
+      <h2>Decision comparison</h2>
+      <table class="compare">
+        <tr><th>Option</th><th>Health</th><th>Craving</th><th>Cost</th><th>Time</th><th>Total</th></tr>
+        ${rows}
+      </table>
+    </div>`;
+}
+</script>
+</body>
+</html>
