@@ -4,11 +4,18 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
-
+from api.health import router as health_router
 from engine import recommend
 from data import get_all_recipes
 
 app = FastAPI(title="CraveWise AI API")
+
+app.include_router(
+    health_router,
+    prefix="/api/health",
+    tags=["Health"]
+)
+
 
 # Allow the simple frontend (opened as a local file or served separately) to call this API.
 app.add_middleware(

@@ -1,0 +1,7 @@
+"""
+Supported Diet Preferences
+"""
+
+DIETS = [
+
+]

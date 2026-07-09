@@ -1,0 +1,7 @@
+"""
+Food Allergies
+"""
+
+ALLERGIES = [
+
+]

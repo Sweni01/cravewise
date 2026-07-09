@@ -12,10 +12,11 @@ natural-language explanation, or handling messier free-text cravings — the
 hook is marked clearly below (`explain_with_llm`) so you can wire in your own
 Gemini/OpenAI key later without changing anything else.
 """
-
+from services.spoonacular import get_recipe_media
 from typing import List, Dict, Any
 from data import get_all_recipes, HEALTHY_SWAPS
-
+from services.spoonacular import search_recipes
+from services.recipe_mapper import spoonacular_to_cravewise
 
 def _craving_score(recipe: Dict[str, Any], craving_text: str) -> int:
     craving_text = craving_text.lower().strip()
@@ -123,7 +124,17 @@ def recommend(profile: Dict[str, Any], craving: str, pantry: List[str],
     goal = profile.get("goal", "maintenance")
 
     scored = []
-    for recipe in get_all_recipes():
+    recipes = search_recipes(craving, number=10)
+
+    if recipes:
+    
+        recipes = [spoonacular_to_cravewise(r) for r in recipes]
+    
+    else:
+    
+        recipes = get_all_recipes()
+    
+    for recipe in recipes:
         health = _health_score(recipe, conditions, goal)
         crave = _craving_score(recipe, craving)
         pantry_pct, missing = _pantry_match(recipe, pantry)
@@ -131,9 +142,32 @@ def recommend(profile: Dict[str, Any], craving: str, pantry: List[str],
 
         total = round(health * 0.35 + crave * 0.35 + pantry_pct * 0.20 +
                        (10 if budget_ok else 0) + (10 if time_ok else -10), 1)
+        tags = []
 
+        if recipe.get("protein", 0) >= 20:
+            tags.append("High Protein")
+
+        if recipe.get("fiber", 0) >= 5:
+            tags.append("High Fiber")
+
+        if recipe.get("calories", 9999) <= 450:
+            tags.append("Low Calorie")
+
+        if recipe.get("time_minutes", 999) <= 30:
+            tags.append("Quick Meal")
+
+        if budget and recipe.get("cost", 0) <= budget:
+            tags.append("Budget Friendly")
+
+        conditions_lower = [c.lower() for c in conditions]
+
+        if "diabetes" in conditions_lower:
+            tags.append("Diabetes Friendly")
+
+        if "pcos" in conditions_lower:
+            tags.append("PCOS Friendly")
         swaps = {ing: HEALTHY_SWAPS[ing] for ing in recipe["ingredients"] if ing in HEALTHY_SWAPS}
-
+        media = get_recipe_media(recipe["name"])
         scored.append({
             **recipe,
             "health_score": health,
@@ -143,8 +177,13 @@ def recommend(profile: Dict[str, Any], craving: str, pantry: List[str],
             "budget_ok": budget_ok,
             "time_ok": time_ok,
             "total_score": total,
+            "ai_match": min(100, int(total)),
+            "tags": tags,
             "explanation": _build_explanation(recipe, conditions, goal, craving, budget, time_limit, missing),
             "healthy_swaps": swaps,
+            "image": media["image"],
+            "youtube": media["youtube"],
+
         })
 
     scored.sort(key=lambda r: r["total_score"], reverse=True)

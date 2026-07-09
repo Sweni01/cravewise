@@ -1,0 +1,4 @@
+id,name,category,severity,avoid_foods,recommended_foods
+1,Diabetes,Metabolic,High,"sugar,soft drinks,candy","whole grains,oats,beans"
+2,Hypertension,Cardiovascular,Medium,"salt,pickles,processed meat","banana,oats,spinach"
+3,Kidney Disease,Renal,High,"banana,potato,tomato","rice,cabbage,apple"

@@ -1,0 +1,90 @@
+{
+    "whole wheat paneer pizza": {
+        "image": null,
+        "youtube": "https://www.youtube.com/results?search_query=Whole Wheat Paneer Pizza+recipe"
+    },
+    "cauliflower crust pizza": {
+        "image": null,
+        "youtube": "https://www.youtube.com/results?search_query=Cauliflower Crust Pizza+recipe"
+    },
+    "grilled paneer wrap": {
+        "image": null,
+        "youtube": "https://www.youtube.com/results?search_query=Grilled Paneer Wrap+recipe"
+    },
+    "butter chicken (lighter version)": {
+        "image": null,
+        "youtube": "https://www.youtube.com/results?search_query=Butter Chicken (Lighter Version)+recipe"
+    },
+    "yogurt-marinated tandoori chicken": {
+        "image": null,
+        "youtube": "https://www.youtube.com/results?search_query=Yogurt-Marinated Tandoori Chicken+recipe"
+    },
+    "tomato onion chicken curry (no cream)": {
+        "image": null,
+        "youtube": "https://www.youtube.com/results?search_query=Tomato Onion Chicken Curry (No Cream)+recipe"
+    },
+    "vegetable oats upma": {
+        "image": null,
+        "youtube": "https://www.youtube.com/results?search_query=Vegetable Oats Upma+recipe"
+    },
+    "moong dal khichdi": {
+        "image": null,
+        "youtube": "https://www.youtube.com/results?search_query=Moong Dal Khichdi+recipe"
+    },
+    "greek yogurt chicken salad": {
+        "image": null,
+        "youtube": "https://www.youtube.com/results?search_query=Greek Yogurt Chicken Salad+recipe"
+    },
+    "paneer bhurji sandwich": {
+        "image": null,
+        "youtube": "https://www.youtube.com/results?search_query=Paneer Bhurji Sandwich+recipe"
+    },
+    "egg & vegetable stir fry": {
+        "image": null,
+        "youtube": "https://www.youtube.com/results?search_query=Egg & Vegetable Stir Fry+recipe"
+    },
+    "banana oats smoothie": {
+        "image": null,
+        "youtube": "https://www.youtube.com/results?search_query=Banana Oats Smoothie+recipe"
+    },
+    "plantain pizza": {
+        "image": "https://img.spoonacular.com/recipes/716300-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=pY6R1eBeoiU"
+    },
+    "blt pizza": {
+        "image": "https://img.spoonacular.com/recipes/680975-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=Km1fh9KlsGI"
+    },
+    "pesto veggie pizza": {
+        "image": "https://img.spoonacular.com/recipes/642777-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=Baq0tK_Mz2k"
+    },
+    "summer vegetable pizza": {
+        "image": "https://img.spoonacular.com/recipes/662264-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=FAyWQAZTm7I"
+    },
+    "butternut squash pizza": {
+        "image": "https://img.spoonacular.com/recipes/636593-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=YRt1cV-J2E0"
+    },
+    "mini eggplant pizza": {
+        "image": "https://img.spoonacular.com/recipes/651956-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=jmurmFeJtbE"
+    },
+    "stilton balsamic pizza": {
+        "image": "https://img.spoonacular.com/recipes/661640-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=taMV8ZMwysA"
+    },
+    "paneer & fig pizza": {
+        "image": "https://img.spoonacular.com/recipes/654523-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=5ZK551A6t8w"
+    },
+    "goat cheese pesto pizza": {
+        "image": "https://img.spoonacular.com/recipes/644953-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=Baq0tK_Mz2k"
+    },
+    "mexican fiesta salad pizza": {
+        "image": "https://img.spoonacular.com/recipes/651624-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=M_-xR8LKUjg"
+    }
+}
