@@ -42,7 +42,7 @@ def _health_score(recipe: Dict[str, Any], conditions: List[str], goal: str) -> i
         score += 20 if "diabetic_friendly" in tags else -15
     if "pcos" in conditions:
         score += 20 if "pcos_friendly" in tags else -10
-
+    
     if goal == "weight_loss":
         if recipe["calories"] <= 350:
             score += 15
@@ -121,7 +121,7 @@ def explain_with_llm(prompt: str) -> str:
 def recommend(profile: Dict[str, Any], craving: str, pantry: List[str],
               budget: int = None, time_limit: int = None, top_n: int = 5):
     selected_conditions = profile.get("health_conditions", [])
-
+    conditions = selected_conditions
     condition_database = get_all_conditions()
 
     condition_info = []
@@ -145,7 +145,7 @@ def recommend(profile: Dict[str, Any], craving: str, pantry: List[str],
         recipes = get_all_recipes()
     
     for recipe in recipes:
-        health = _health_score(recipe, conditions, goal)
+        health = _health_score(recipe, selected_conditions, goal)
         crave = _craving_score(recipe, craving)
         pantry_pct, missing = _pantry_match(recipe, pantry)
         budget_ok, time_ok = _budget_time_fit(recipe, budget, time_limit)
@@ -169,7 +169,7 @@ def recommend(profile: Dict[str, Any], craving: str, pantry: List[str],
         if budget and recipe.get("cost", 0) <= budget:
             tags.append("Budget Friendly")
 
-        conditions_lower = [c.lower() for c in conditions]
+        conditions_lower = [c.lower() for c in selected_conditions]
 
         if "diabetes" in conditions_lower:
             tags.append("Diabetes Friendly")
@@ -189,7 +189,7 @@ def recommend(profile: Dict[str, Any], craving: str, pantry: List[str],
             "total_score": total,
             "ai_match": min(100, int(total)),
             "tags": tags,
-            "explanation": _build_explanation(recipe, conditions, goal, craving, budget, time_limit, missing),
+            "explanation": _build_explanation(recipe, selected_conditions, goal, craving, budget, time_limit, missing),
             "healthy_swaps": swaps,
             "image": media["image"],
             "youtube": media["youtube"],
