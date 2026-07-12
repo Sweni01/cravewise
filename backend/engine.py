@@ -121,7 +121,7 @@ def explain_with_llm(prompt: str) -> str:
 def recommend(profile: Dict[str, Any], craving: str, pantry: List[str],
               budget: int = None, time_limit: int = None, top_n: int = 5):
     selected_conditions = profile.get("health_conditions", [])
-    conditions = selected_conditions
+    
     condition_database = get_all_conditions()
 
     condition_info = []

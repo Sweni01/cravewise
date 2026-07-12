@@ -29,7 +29,7 @@ def signup(user: dict):
         )
 
     new_user = User(
-        username=user["username"],
+        username=user["name"],
         email=user["email"],
         password=hash_password(user["password"])
     )
@@ -75,7 +75,8 @@ def login(user: dict):
     )
 
     return {
-        "success": True,
-        "access_token": token,
-        "token_type": "bearer"
+    "success": True,
+    "user_id": existing.id,
+    "access_token": token,
+    "token_type": "bearer"  
     }
