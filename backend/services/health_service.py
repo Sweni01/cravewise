@@ -15,14 +15,6 @@ def get_all_conditions():
 
     df = pd.read_csv(CONDITIONS_FILE)
 
-    conditions = []
+    df = df.fillna("")
 
-    for _, row in df.iterrows():
-
-        conditions.append({
-    "id": row["id"],
-    "name": row["name"],
-    "category": row["category"],
-    "severity": row["severity"],
-})
-    return conditions
+    return df.to_dict(orient="records")

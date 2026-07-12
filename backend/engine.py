@@ -17,7 +17,7 @@ from typing import List, Dict, Any
 from data import get_all_recipes, HEALTHY_SWAPS
 from services.spoonacular import search_recipes
 from services.recipe_mapper import spoonacular_to_cravewise
-
+from services.health_service import get_all_conditions
 def _craving_score(recipe: Dict[str, Any], craving_text: str) -> int:
     craving_text = craving_text.lower().strip()
     if not craving_text:
@@ -120,7 +120,17 @@ def explain_with_llm(prompt: str) -> str:
 
 def recommend(profile: Dict[str, Any], craving: str, pantry: List[str],
               budget: int = None, time_limit: int = None, top_n: int = 5):
-    conditions = profile.get("health_conditions", [])
+    selected_conditions = profile.get("health_conditions", [])
+
+    condition_database = get_all_conditions()
+
+    condition_info = []
+
+    for cond in condition_database:
+
+        if cond["name"] in selected_conditions:
+
+            condition_info.append(cond)
     goal = profile.get("goal", "maintenance")
 
     scored = []

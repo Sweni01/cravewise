@@ -7,8 +7,16 @@ from typing import List, Optional
 from api.health import router as health_router
 from engine import recommend
 from data import get_all_recipes
-
+from api.condition_groups import router as grouped_router
+from api.auth import router as auth_router
 app = FastAPI(title="CraveWise AI API")
+from api.favorites import router as favorites_router
+
+app.include_router(
+    grouped_router,
+    prefix="/api/health",
+    tags=["Health"]
+)
 
 app.include_router(
     health_router,
@@ -16,7 +24,17 @@ app.include_router(
     tags=["Health"]
 )
 
+app.include_router(
+    auth_router,
+    prefix="/api/auth",
+    tags=["Authentication"]
+)
 
+app.include_router(
+    favorites_router,
+    prefix="/api/favorites",
+    tags=["Favorites"]
+)
 # Allow the simple frontend (opened as a local file or served separately) to call this API.
 app.add_middleware(
     CORSMiddleware,

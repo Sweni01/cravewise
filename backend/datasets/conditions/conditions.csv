@@ -1,4 +1,413 @@
 id,name,category,severity,avoid_foods,recommended_foods
-1,Diabetes,Metabolic,High,"sugar,soft drinks,candy","whole grains,oats,beans"
-2,Hypertension,Cardiovascular,Medium,"salt,pickles,processed meat","banana,oats,spinach"
-3,Kidney Disease,Renal,High,"banana,potato,tomato","rice,cabbage,apple"
+1,Type 2 Diabetes Mellitus,Metabolic,High,"Sugary drinks,candy,white bread,pastries,sweetened
+cereals","Leafy greens,legumes,whole grains,berries,fatty fish"
+2,Type 1 Diabetes Mellitus,Metabolic,High,"Sugary drinks,fruit juice,white rice,refined
+snacks","Non-starchy vegetables,lean protein,whole grains,nuts"
+3,Prediabetes,Metabolic,Medium,"Sugary snacks,white bread,sweetened beverages","Whole
+grains,legumes,vegetables,nuts"
+4,Metabolic Syndrome,Metabolic,High,"Fried foods,sugary drinks,refined carbs,processed meats","Olive
+oil,fatty fish,vegetables,whole grains"
+5,Obesity,Metabolic,Medium,"Fast food,sugary beverages,fried foods,refined snacks","High-fiber
+vegetables,lean protein,legumes,fruit"
+6,Insulin Resistance,Metabolic,Medium,"Refined sugar,white bread,sweetened cereals","Whole grains,leafy
+greens,legumes,nuts"
+7,Hypoglycemia,Metabolic,Medium,"Alcohol,sugary snacks alone,high-glycemic foods without protein","Complex
+carbohydrates,whole-grain crackers with cheese,nut butter"
+8,Gout,Metabolic,Medium,"Red meat,organ meats,shellfish,beer,sugary drinks","Low-fat dairy,cherries,whole
+grains,vegetables"
+9,Hyperlipidemia,Metabolic,Medium,"Fried food,fatty red meat,butter,full-fat dairy","Oats,fatty
+fish,nuts,olive oil"
+10,Hypertriglyceridemia,Metabolic,Medium,"Sugary drinks,refined carbs,alcohol,fried food","Fatty fish,whole
+grains,leafy greens,nuts"
+11,Hypertension,Cardiovascular,High,"Table salt,processed meats,canned soups,pickles","Bananas,leafy
+greens,oats,low-fat dairy"
+12,Coronary Artery Disease,Cardiovascular,High,"Fried food,trans fats,red meat,full-fat dairy","Fatty
+fish,olive oil,whole grains,nuts"
+13,Congestive Heart Failure,Cardiovascular,Critical,"High-sodium foods,processed meats,canned soups,salted
+snacks","Fresh vegetables,low-sodium lean protein,whole grains"
+14,Atrial Fibrillation,Cardiovascular,High,"Excess alcohol,caffeine,energy drinks","Leafy greens in
+consistent amounts,lean protein,whole grains"
+15,High Cholesterol (Hyperlipidemia LDL),Cardiovascular,Medium,"Fried foods,red
+meat,butter,pastries","Oats,nuts,fatty fish,olive oil"
+16,Peripheral Artery Disease,Cardiovascular,High,"Fried foods,processed meats,full-fat dairy","Leafy
+greens,fatty fish,whole grains"
+17,Stroke Recovery,Cardiovascular,Critical,"High-sodium foods,fried foods,sugary
+drinks","Fruits,vegetables,whole grains,fatty fish"
+18,Deep Vein Thrombosis (on anticoagulants),Cardiovascular,High,"Excess alcohol,sudden large vitamin K
+intake changes","Consistent moderate leafy vegetables,lean protein"
+19,Angina,Cardiovascular,High,"Fried foods,fatty meats,full-fat dairy","Whole grains,vegetables,fatty fish"
+20,Cardiomyopathy,Cardiovascular,Critical,"High-sodium foods,alcohol,energy drinks","Lean
+protein,vegetables,whole grains"
+21,Varicose Veins,Cardiovascular,Low,"Excess sodium,processed snacks","High-fiber vegetables,citrus
+fruits,whole grains"
+22,Asthma,Respiratory,Medium,"Sulfite-containing foods (wine,dried fruit),fried foods","Fatty fish,vitamin
+C fruits,leafy vegetables"
+23,Chronic Obstructive Pulmonary Disease (COPD),Respiratory,High,"Carbonated drinks,salty snacks,fried
+foods","Small frequent high-protein meals,fruits,vegetables"
+24,Chronic Bronchitis,Respiratory,Medium,"Excess dairy if mucus-sensitive,fried foods,sugary drinks","Warm
+fluids,fruits,vegetables,lean protein"
+25,Pulmonary Fibrosis,Respiratory,Critical,"Salty processed foods,fried food,alcohol","Small frequent
+high-protein meals,fruits,vegetables"
+26,Obstructive Sleep Apnea,Respiratory,Medium,"Heavy late meals,alcohol,caffeine before bed","Lean
+protein,vegetables,whole grains"
+27,Pneumonia Recovery,Respiratory,High,"Alcohol,sugary drinks","High-protein foods,fruits,vegetables,warm
+fluids"
+28,Pulmonary Tuberculosis (Nutritional Support),Respiratory,High,"Alcohol,empty-calorie processed
+food","High-protein foods,vitamin-rich fruits,dairy"
+29,Chronic Sinusitis,Respiratory,Low,"Dairy in excess if mucus-sensitive,sugary snacks","Vitamin C
+fruits,warm broths,leafy greens"
+30,Migraine,Neurology,Medium,"Aged cheese,processed meats,red wine,MSG,chocolate","Hydrating
+foods,magnesium-rich spinach,almonds"
+31,Epilepsy,Neurology,High,"Alcohol,excess caffeine","Balanced whole-food meals,healthy fats,non-starchy
+vegetables"
+32,Parkinson's Disease,Neurology,High,"High-protein meals close to medication times,fried
+foods","Fiber-rich fruits,vegetables,adequate fluids"
+33,Multiple Sclerosis,Neurology,High,"Saturated fat,processed foods","Fatty fish,fruits,vegetables,whole
+grains"
+34,Alzheimer's Disease,Neurology,High,"Processed sugar,fried food,excess alcohol","Fatty fish,berries,leafy
+greens,nuts"
+35,Peripheral Neuropathy,Neurology,Medium,"Alcohol,sugary foods","Whole grains,leafy greens,lean
+protein,B12 sources"
+36,Essential Tremor,Neurology,Low,"Caffeine,alcohol","Balanced whole foods,adequate hydration"
+37,Vestibular Vertigo,Neurology,Medium,"High-sodium foods,caffeine,alcohol","Low-sodium diet,hydrating
+fruits,vegetables"
+38,Amyotrophic Lateral Sclerosis (ALS),Neurology,Critical,"Dry crumbly foods,thin
+liquids,alcohol","Calorie-dense soft foods,thickened fluids,lean protein"
+39,Gastroesophageal Reflux Disease (GERD),Digestive,Medium,"Coffee,chocolate,tomato
+sauce,peppermint,alcohol","Oatmeal,lean protein,non-citrus fruits,vegetables"
+40,Irritable Bowel Syndrome (IBS),Digestive,Medium,"High-FODMAP foods (garlic,onion,wheat),carbonated
+drinks","Low-FODMAP vegetables,rice,lean protein"
+41,Crohn's Disease,Digestive,High,"Raw high-fiber vegetables during flares,spicy food,dairy if
+intolerant","Cooked vegetables,lean protein,low-fiber refined grains"
+42,Ulcerative Colitis,Digestive,High,"Raw vegetables,spicy food,caffeine,alcohol during flares","Cooked
+low-fiber vegetables,lean protein,refined grains"
+43,Celiac Disease,Digestive,High,"Wheat,barley,rye,regular pasta,bread","Rice,quinoa,gluten-free
+oats,fruits,vegetables"
+44,Peptic Ulcer Disease,Digestive,Medium,"Spicy food,coffee,alcohol,citrus fruits","Bananas,oatmeal,lean
+protein,non-citrus fruits"
+45,Gallstones,Digestive,Medium,"Fried food,fatty meats,full-fat dairy","High-fiber vegetables,whole
+grains,lean protein"
+46,Diverticulitis (Acute Flare),Digestive,High,"High-fiber foods,nuts and seeds,spicy food","Low-fiber
+broth,refined grains,cooked vegetables"
+47,Chronic Constipation,Digestive,Low,"Processed low-fiber foods,excess dairy","Prunes,whole grains,leafy
+greens,beans"
+48,Acute Diarrhea,Digestive,Medium,"Dairy,fatty food,caffeine,spicy food","Bananas,rice,applesauce,toast"
+49,Hemorrhoids,Digestive,Low,"Low-fiber processed food,spicy food","High-fiber fruits,vegetables,whole
+grains"
+50,Gastroparesis,Digestive,High,"High-fat foods,raw high-fiber vegetables","Low-fat low-fiber pureed
+foods,small frequent meals"
+51,Chronic Pancreatitis,Digestive,High,"Fried food,alcohol,fatty meats","Low-fat lean protein,whole
+grains,vegetables"
+52,Bile Acid Malabsorption,Digestive,Medium,"Fatty fried foods,full-fat dairy","Low-fat lean
+protein,soluble fiber oats,vegetables"
+53,Short Bowel Syndrome,Digestive,Critical,"High-sugar drinks,high-fat fried food","Small frequent
+nutrient-dense meals,oral rehydration fluids"
+54,Chronic Kidney Disease Stage 3,Kidney,High,"Banana,potato,tomato,processed meat,dark
+cola","Cauliflower,cabbage,apples,egg whites"
+55,Chronic Kidney Disease Stage 4-5
+(Pre-Dialysis),Kidney,Critical,"Dairy,nuts,beans,orange,potato","Rice,white bread,apples,portion-controlled
+egg whites"
+56,Calcium Oxalate Kidney Stones,Kidney,Medium,"Spinach,beets,nuts,chocolate,tea","Citrus
+fruits,water,low-oxalate vegetables"
+57,Nephrotic Syndrome,Kidney,High,"High-sodium foods,processed meats","Lean protein,fresh low-sodium
+vegetables"
+58,Polycystic Kidney Disease,Kidney,High,"High-sodium foods,processed meats,dark cola","Fresh
+fruits,vegetables,whole grains"
+59,Hemodialysis (Maintenance),Kidney,Critical,"Banana,orange,potato,dairy,dark cola","Cabbage,apples,white
+bread,egg whites"
+60,Peritoneal Dialysis,Kidney,Critical,"High-potassium fruits,processed meats,dark cola","Low-potassium
+vegetables,lean protein,refined grains"
+61,Uric Acid Kidney Stones,Kidney,Medium,"Organ meats,shellfish,beer,red meat","Low-fat dairy,citrus
+fruits,whole grains"
+62,Non-Alcoholic Fatty Liver Disease,Liver,Medium,"Sugary drinks,fried food,refined carbs","Leafy
+greens,oats,fatty fish,unsweetened coffee"
+63,Liver Cirrhosis,Liver,Critical,"Alcohol,high-sodium foods,raw shellfish","Lean protein,low-sodium
+vegetables,whole grains"
+64,Chronic Hepatitis B/C,Liver,High,"Alcohol,fatty fried food","Lean protein,fruits,vegetables,whole
+grains"
+65,Hepatic Encephalopathy,Liver,Critical,"Excess animal protein,alcohol","Plant-based protein,low-sodium
+vegetables,small frequent meals"
+66,Alcoholic Liver Disease,Liver,Critical,"Alcohol,fried food,processed snacks","Lean protein,leafy
+greens,whole grains"
+67,Wilson's Disease,Liver,High,"Liver,shellfish,mushrooms,chocolate","Low-copper fruits,refined
+grains,poultry"
+68,Hypothyroidism,Endocrine,Medium,"Excess soy,large amounts of raw cruciferous vegetables,processed
+food","Iodine-rich foods,lean protein,selenium-rich nuts"
+69,Hyperthyroidism,Endocrine,High,"Excess iodine (seaweed,iodized salt),caffeine","Calcium-rich
+foods,cooked cruciferous vegetables,lean protein"
+70,Hashimoto's Thyroiditis,Endocrine,Medium,"Gluten if sensitive,processed food,excess soy","Selenium-rich
+foods,anti-inflammatory vegetables,lean protein"
+71,Cushing's Syndrome,Endocrine,High,"High-sodium foods,sugary foods","Potassium-rich fruits,lean
+protein,whole grains"
+72,Addison's Disease,Endocrine,High,"Excess caffeine,low-sodium processed foods","Adequate sodium
+sources,whole grains,lean protein"
+73,Acromegaly,Endocrine,Medium,"Sugary foods,processed carbs","Balanced whole foods,lean
+protein,vegetables"
+74,Diabetes Insipidus,Endocrine,Medium,"Excess caffeine,alcohol","Adequate fluids,balanced electrolyte
+foods"
+75,Hyperparathyroidism,Endocrine,Medium,"Excess calcium supplements,high-sodium foods","Hydrating
+fluids,moderate calcium whole foods,vegetables"
+76,Polycystic Ovary Syndrome (PCOS),Women's Health,Medium,"Sugary drinks,white flour,processed
+snacks","Leafy greens,lean protein,whole grains,cinnamon"
+77,Endometriosis,Women's Health,Medium,"Red meat,trans fat,processed food","Anti-inflammatory
+fruits,vegetables,fatty fish"
+78,Menopause,Women's Health,Low,"Excess caffeine,alcohol,spicy food","Calcium-rich foods,soy,leafy
+greens,whole grains"
+79,Premenstrual Syndrome (PMS),Women's Health,Low,"Excess salt,caffeine,sugary snacks","Whole grains,leafy
+greens,calcium-rich dairy"
+80,Uterine Fibroids,Women's Health,Medium,"Red meat,processed food,alcohol","Leafy greens,fruits,whole
+grains"
+81,Polymenorrhea / Heavy Menstrual Bleeding,Women's Health,Medium,"Tea/coffee with meals,low-iron processed
+food","Red meat,spinach,lentils,vitamin C fruits"
+82,Vulvovaginal Candidiasis (Recurrent),Women's Health,Low,"Sugary drinks,refined carbs,alcohol","Probiotic
+yogurt,non-starchy vegetables,whole grains"
+83,Benign Prostatic Hyperplasia (BPH),Men's Health,Medium,"Caffeine,alcohol,spicy food","Tomatoes,pumpkin
+seeds,leafy greens"
+84,Erectile Dysfunction (Vascular-Related),Men's Health,Medium,"Fried food,processed meat,excess
+alcohol","Leafy greens,nuts,fatty fish"
+85,Low Testosterone (Hypogonadism),Men's Health,Medium,"Excess alcohol,processed sugar","Lean
+protein,zinc-rich foods,healthy fats"
+86,Male Infertility (Nutritional Support),Men's Health,Medium,"Trans fats,processed
+meats,alcohol","Antioxidant-rich fruits,nuts,fatty fish"
+87,Rheumatoid Arthritis,Autoimmune,High,"Fried food,processed meat,sugary drinks","Fatty fish,leafy
+greens,berries,nuts"
+88,Systemic Lupus Erythematosus (Lupus),Autoimmune,High,"Alfalfa sprouts,processed food,excess salt","Fatty
+fish,fruits,vegetables,whole grains"
+89,Psoriasis,Autoimmune,Medium,"Red meat,processed food,alcohol","Fatty fish,leafy greens,berries"
+90,Sjogren's Syndrome,Autoimmune,Medium,"Caffeine,alcohol,spicy food","Hydrating foods,omega-3 fish,moist
+soft foods"
+91,Ankylosing Spondylitis,Autoimmune,Medium,"Processed food,sugary drinks","Fatty fish,leafy
+greens,anti-inflammatory spices"
+92,Scleroderma,Autoimmune,High,"Caffeine,spicy food,large meals","Small frequent meals,soft cooked
+vegetables,lean protein"
+93,Celiac Disease (Autoimmune Gluten
+Enteropathy),Autoimmune,High,"Wheat,barley,rye,malt","Rice,quinoa,gluten-free oats,vegetables"
+94,Vitiligo,Autoimmune,Low,"Excess alcohol,processed food","Antioxidant-rich fruits,vegetables,folate-rich
+greens"
+95,Atopic Dermatitis (Eczema),Skin,Medium,"Dairy if triggering,processed food,allergenic nuts if
+sensitive","Fatty fish,leafy greens,probiotic yogurt"
+96,Acne Vulgaris,Skin,Low,"High-glycemic food,sugary drinks,excess dairy","Leafy greens,fatty
+fish,zinc-rich nuts"
+97,Rosacea,Skin,Low,"Spicy food,alcohol,hot beverages","Cooling fruits,vegetables,fatty fish"
+98,Dermatitis Herpetiformis,Skin,Medium,"Gluten-containing wheat,barley,rye","Gluten-free
+grains,fruits,vegetables"
+99,Chronic Urticaria (Hives),Skin,Medium,"Aged cheese,processed meats,alcohol","Fresh fruits,fresh
+vegetables,lean protein"
+100,Iron Deficiency Anemia,Blood Disorders,Medium,"Tea/coffee with meals,high-calcium foods with iron
+meals","Red meat,spinach,lentils,vitamin C fruits"
+101,Sickle Cell Disease,Blood Disorders,High,"Dehydrating foods,excess caffeine,alcohol","Hydrating
+fluids,folate-rich foods,lean protein"
+102,Thalassemia,Blood Disorders,High,"Iron-fortified foods,excess vitamin C with meals","Calcium-rich
+foods,folate-rich vegetables"
+103,Hemophilia,Blood Disorders,High,"Excess alcohol,unmonitored high-dose vitamin K","Balanced whole
+foods,vitamin C fruits"
+104,Polycythemia Vera,Blood Disorders,High,"Iron-rich foods,alcohol","Hydrating fluids,fruits,vegetables"
+105,Thrombocytopenia,Blood Disorders,High,"Alcohol,high-dose garlic supplements","Leafy greens,vitamin K
+rich vegetables,lean protein"
+106,Pernicious Anemia,Blood Disorders,Medium,"Alcohol,low-protein processed
+food","Meat,dairy,eggs,fortified cereals"
+107,Osteoporosis,Bone & Joint,High,"Excess caffeine,sodium,carbonated soft drinks","Dairy,leafy
+greens,fortified plant milk,fatty fish"
+108,Osteoarthritis,Bone & Joint,Medium,"Fried food,processed meat,sugary drinks","Fatty fish,leafy
+greens,nuts,berries"
+109,Osteopenia,Bone & Joint,Medium,"Excess soda,caffeine","Calcium-rich dairy,leafy greens,vitamin D
+fortified food"
+110,Fibromyalgia,Bone & Joint,Medium,"Processed food,caffeine,alcohol","Anti-inflammatory
+fruits,vegetables,fatty fish"
+111,Bursitis,Bone & Joint,Low,"Fried food,processed meat","Fatty fish,leafy greens,berries"
+112,Osteomalacia,Bone & Joint,Medium,"Excess caffeine,low-nutrient processed food","Fatty fish,fortified
+dairy,egg yolks"
+113,Breast Cancer (Nutritional Support),Cancer Support,High,"Alcohol,processed meat,sugary
+drinks","Cruciferous vegetables,berries,whole grains"
+114,Colorectal Cancer (Nutritional Support),Cancer Support,High,"Red meat,processed
+meat,alcohol","High-fiber vegetables,whole grains,legumes"
+115,Prostate Cancer (Nutritional Support),Cancer Support,High,"Processed meat,full-fat
+dairy,alcohol","Tomatoes,cruciferous vegetables,fatty fish"
+116,Chemotherapy-Related Nausea,Cancer Support,High,"Greasy food,strong-smelling food,spicy food","Bland
+small meals,ginger,plain crackers"
+117,Radiation Therapy Support (Mouth Sores),Cancer Support,High,"Spicy food,alcohol,hard crunchy
+foods","Soft high-protein foods,hydrating fluids"
+118,Cancer-Related Cachexia,Cancer Support,Critical,"Low-calorie diluted foods,excess fibrous
+bulk","Calorie-dense foods,nut butters,full-fat dairy"
+119,Major Depressive Disorder (Nutritional Support),Mental Health,High,"Excess alcohol,sugary processed
+food","Fatty fish,leafy greens,whole grains,nuts"
+120,Generalized Anxiety Disorder,Mental Health,Medium,"Caffeine,alcohol,sugary snacks","Magnesium-rich
+foods,whole grains,leafy greens"
+121,Bipolar Disorder (Nutritional Support),Mental Health,High,"Excess caffeine,alcohol","Omega-3 fatty
+fish,whole grains,consistent balanced meals"
+122,Chronic Insomnia,Mental Health,Medium,"Late-day caffeine,alcohol,heavy late meals","Warm milk,whole
+grains,tart cherries,magnesium-rich foods"
+123,Attention-Deficit/Hyperactivity Disorder (ADHD),Mental Health,Medium,"Artificial food dyes,sugary
+snacks","Lean protein,omega-3 fatty fish,complex carbohydrates"
+124,Binge Eating Disorder (Nutritional Support),Mental Health,High,"Highly processed trigger snacks eaten
+alone,sugary drinks","Regular balanced meals,high-fiber vegetables,lean protein"
+125,Age-Related Macular Degeneration,Eye Disorders,High,"Fried food,processed food","Leafy greens,fatty
+fish,citrus fruits,eggs"
+126,Cataracts,Eye Disorders,Medium,"Sugary food,fried food","Leafy greens,vitamin C fruits,nuts"
+127,Diabetic Retinopathy,Eye Disorders,High,"Sugary drinks,refined carbs","Leafy greens,fatty fish,whole
+grains"
+128,Glaucoma,Eye Disorders,High,"Excess caffeine,large fluid volumes in one sitting","Leafy greens,fatty
+fish,antioxidant fruits"
+129,Dry Eye Syndrome,Eye Disorders,Low,"Alcohol,caffeine","Omega-3 fatty fish,hydrating fruits,flaxseed"
+130,Meniere's Disease,Ear Disorders,Medium,"High-sodium foods,caffeine,alcohol","Low-sodium diet,hydrating
+fruits,vegetables"
+131,Tinnitus,Ear Disorders,Low,"Caffeine,alcohol,high-sodium foods","Magnesium-rich foods,hydrating
+fruits,whole grains"
+132,Recurrent Otitis Media (Pediatric),Ear Disorders,Medium,"Excess dairy if mucus-prone,sugary
+snacks","Immune-supporting fruits,vegetables,zinc-rich foods"
+133,Dental Caries,Oral Health,Low,"Sugary snacks,sticky candy,soda","Dairy,crunchy vegetables,water"
+134,Gingivitis / Periodontal Disease,Oral Health,Medium,"Sugary food,sticky snacks","Vitamin C
+fruits,crunchy vegetables,dairy"
+135,Xerostomia (Dry Mouth),Oral Health,Low,"Dry crackers,spicy food,alcohol-based rinses","Hydrating
+fruits,soups,sugar-free fluids"
+136,Influenza (Recovery),Infectious Diseases,Medium,"Alcohol,sugary drinks","Chicken soup,citrus
+fruits,hydrating fluids"
+137,COVID-19 Recovery,Infectious Diseases,Medium,"Alcohol,processed sugary food","High-protein
+foods,vitamin C fruits,zinc-rich foods"
+138,HIV/AIDS (Nutritional Support),Infectious Diseases,High,"Unpasteurized dairy,raw
+seafood,alcohol","High-protein foods,whole grains,fruits,vegetables"
+139,Malaria (Recovery),Infectious Diseases,High,"Alcohol,fatty fried food","Hydrating fluids,iron-rich
+foods,vitamin C fruits"
+140,Typhoid Fever (Recovery),Infectious Diseases,High,"Raw vegetables,spicy food,high-fiber foods","Soft
+cooked foods,bananas,rice"
+141,Infectious Mononucleosis (Recovery),Infectious Diseases,Medium,"Alcohol,contact sports-adjacent heavy
+meals,sugary drinks","Hydrating fluids,lean protein,vitamin C fruits"
+142,Peanut Allergy,Allergies,Critical,"Peanuts,peanut oil,foods with peanut traces","Seeds,legumes,lean
+protein"
+143,Shellfish Allergy,Allergies,Critical,"Shrimp,crab,lobster,shellfish-derived sauces","Fish if
+tolerated,lean poultry,plant protein"
+144,Tree Nut Allergy,Allergies,Critical,"Almonds,walnuts,cashews,nut butters","Seeds,legumes,lean protein"
+145,Egg Allergy,Allergies,High,"Eggs,mayonnaise,egg-containing baked goods","Legumes,dairy,lean meat"
+146,Cow's Milk Protein Allergy,Allergies,High,"Dairy milk,cheese,yogurt,butter","Fortified plant milk,leafy
+greens,calcium-set tofu"
+147,Soy Allergy,Allergies,Medium,"Soy milk,tofu,soy sauce,edamame","Dairy or non-soy plant
+alternatives,lean meat"
+148,Wheat Allergy,Allergies,High,"Wheat bread,pasta,wheat-based cereals","Rice,quinoa,gluten-free grains"
+149,Fish Allergy,Allergies,Critical,"Fish,fish sauce,fish oil supplements","Poultry,legumes,flaxseed for
+omega-3"
+150,Sesame Allergy,Allergies,High,"Sesame seeds,tahini,sesame oil","Sunflower seed butter,other seeds,lean
+protein"
+151,Oral Allergy Syndrome (Latex-Fruit),Allergies,Medium,"Banana,avocado,kiwi,chestnut","Alternative
+fruits,vegetables,lean protein"
+152,Seasonal Allergic Rhinitis,Allergies,Low,"Alcohol,high-histamine processed food","Vitamin C
+fruits,quercetin-rich apples,leafy greens"
+153,Lactose Intolerance,Food Intolerances,Medium,"Milk,ice cream,soft cheese","Lactose-free dairy,almond
+milk,leafy greens for calcium"
+154,Non-Celiac Gluten Sensitivity,Food Intolerances,Medium,"Wheat,barley,rye","Rice,quinoa,gluten-free
+oats"
+155,Fructose Intolerance,Food Intolerances,Medium,"High-fructose fruits,honey,sweetened
+drinks","Low-fructose fruits,vegetables,whole grains"
+156,Histamine Intolerance,Food Intolerances,Medium,"Aged cheese,fermented food,processed meat,wine","Fresh
+meat,fresh vegetables,low-histamine fruits"
+157,FODMAP Sensitivity,Food Intolerances,Medium,"Garlic,onion,wheat,high-fructose fruits","Low-FODMAP
+vegetables,rice,lean protein"
+158,Caffeine Sensitivity,Food Intolerances,Low,"Coffee,energy drinks,chocolate","Herbal tea,water,whole
+foods"
+159,Sulfite Sensitivity,Food Intolerances,Medium,"Wine,dried fruit,processed potatoes","Fresh fruits,fresh
+vegetables,freshly prepared food"
+160,Vitamin D Deficiency,Vitamin Deficiencies,Medium,Sugary processed food in excess,"Fatty fish,fortified
+dairy,egg yolks"
+161,Vitamin B12 Deficiency,Vitamin Deficiencies,Medium,Excess alcohol,"Meat,dairy,eggs,fortified cereals"
+162,Vitamin C Deficiency (Scurvy),Vitamin Deficiencies,High,Highly processed low-nutrient food,"Citrus
+fruits,bell peppers,strawberries"
+163,Vitamin A Deficiency,Vitamin Deficiencies,Medium,Highly processed low-nutrient food,"Carrots,sweet
+potato,leafy greens,liver"
+164,Vitamin K Deficiency,Vitamin Deficiencies,Medium,Diets with unmonitored anticoagulant
+interaction,"Leafy greens,broccoli,Brussels sprouts"
+165,Vitamin B6 Deficiency,Vitamin Deficiencies,Low,Alcohol,"Poultry,fish,chickpeas,bananas"
+166,Folate Deficiency,Vitamin Deficiencies,Medium,"Alcohol,overcooked vegetables","Leafy
+greens,legumes,fortified grains"
+167,Vitamin E Deficiency,Vitamin Deficiencies,Low,Highly processed low-fat diets,"Nuts,seeds,vegetable
+oils,leafy greens"
+168,Thiamine (B1) Deficiency,Vitamin Deficiencies,High,"Alcohol,excess refined carbohydrates","Whole
+grains,pork,legumes"
+169,Calcium Deficiency,Mineral Deficiencies,Medium,"Excess caffeine,excess sodium","Dairy,fortified plant
+milk,leafy greens"
+170,Magnesium Deficiency,Mineral Deficiencies,Medium,"Alcohol,processed food","Nuts,seeds,leafy
+greens,whole grains"
+171,Zinc Deficiency,Mineral Deficiencies,Medium,Excess alcohol,"Meat,shellfish,legumes,seeds"
+172,Potassium Deficiency (Hypokalemia),Mineral Deficiencies,High,"Excess
+caffeine,alcohol","Bananas,potatoes,spinach,oranges"
+173,Iodine Deficiency,Mineral Deficiencies,Medium,Excess raw cruciferous vegetables,"Iodized
+salt,seafood,dairy"
+174,Selenium Deficiency,Mineral Deficiencies,Low,Highly processed low-nutrient food,"Brazil
+nuts,seafood,eggs"
+175,Phenylketonuria (PKU),Genetic Disorders,Critical,"High-protein
+meat,fish,eggs,dairy,aspartame","Low-protein specialty grains,fruits,vegetables"
+176,Cystic Fibrosis,Genetic Disorders,Critical,"Low-calorie restrictive diets,unmonitored fluid-only
+intake","High-calorie high-fat foods,salty snacks,enzyme-paired meals"
+177,Hereditary Hemochromatosis,Genetic Disorders,High,"Iron-rich foods,vitamin C with meals,alcohol","Tea
+or coffee with meals,calcium-rich foods,whole grains"
+178,Wilson's Disease (Genetic Copper Overload),Genetic
+Disorders,High,"Liver,shellfish,mushrooms,chocolate","Low-copper fruits,refined grains,poultry"
+179,Galactosemia,Genetic Disorders,Critical,"Dairy,milk products,galactose-containing foods","Soy or plant
+milk,meat,vegetables"
+180,Marfan Syndrome (Cardiac Nutrition),Genetic Disorders,High,"High-sodium foods,excess
+caffeine","Heart-healthy vegetables,lean protein,whole grains"
+181,Maple Syrup Urine Disease,Genetic Disorders,Critical,"High-protein meat,dairy,eggs,nuts","Medical
+low-protein formula,fruits,low-protein vegetables"
+182,Childhood Obesity,Pediatric Disorders,Medium,"Sugary drinks,fast food,processed
+snacks","Fruits,vegetables,whole grains,lean protein"
+183,Failure to Thrive (Pediatric),Pediatric Disorders,High,"Diluted formula,excess juice","Calorie-dense
+foods,whole milk,nut butters"
+184,Pediatric Celiac Disease,Pediatric Disorders,High,"Wheat,barley,rye","Gluten-free
+grains,fruits,vegetables"
+185,Childhood Asthma,Pediatric Disorders,Medium,"Sulfite-containing foods,fried foods","Vitamin C
+fruits,vegetables,fatty fish"
+186,Pediatric Feeding Difficulties (Autism Spectrum),Pediatric Disorders,Medium,Highly processed
+low-nutrient snacks as sole intake,"Nutrient-dense familiar foods,gradual food variety"
+187,Pediatric Iron Deficiency Anemia,Pediatric Disorders,Medium,"Tea with meals,excess cow's milk
+volume","Red meat,iron-fortified cereal,vitamin C fruits"
+188,Sarcopenia,Geriatric Disorders,High,"Low-protein diets,excess alcohol","Lean
+protein,eggs,dairy,legumes"
+189,Dysphagia,Geriatric Disorders,High,"Dry crumbly foods,thin liquids,hard textures","Pureed
+foods,thickened liquids,soft moist foods"
+190,Age-Related Osteoporosis,Geriatric Disorders,High,"Excess caffeine,sodium","Calcium-rich dairy,leafy
+greens,fatty fish"
+191,Dementia (Nutritional Support),Geriatric Disorders,High,"Excess sugar,alcohol","Fatty
+fish,berries,leafy greens,easy finger foods"
+192,Pressure Ulcers (Nutritional Support),Geriatric Disorders,High,Low-protein low-calorie
+diets,"High-protein foods,vitamin C fruits,zinc-rich foods"
+193,Frailty Syndrome,Geriatric Disorders,High,Low-calorie low-protein processed food,"Lean protein,healthy
+fats,calorie-dense whole foods"
+194,Muscle Hypertrophy Goals,Sports Nutrition,Low,"Excess alcohol,empty-calorie snacks","Lean
+protein,complex carbohydrates,healthy fats"
+195,Endurance Athlete Fueling,Sports Nutrition,Low,"High-fat meals pre-exercise,excess fiber before
+events","Complex carbohydrates,bananas,electrolyte fluids"
+196,Exercise-Induced Muscle Cramps,Sports Nutrition,Low,"Excess caffeine,alcohol,dehydrating
+drinks","Bananas,electrolyte fluids,leafy greens"
+197,Post-Exercise Recovery,Sports Nutrition,Low,"Alcohol,sugary processed snacks","Lean protein,complex
+carbohydrates,tart cherry juice"
+198,Relative Energy Deficiency in Sport (RED-S),Sports Nutrition,High,"Severely restricted calorie
+intake,low-fat diets","Calorie-dense whole foods,healthy fats,adequate protein"
+199,Gestational Diabetes,Pregnancy,High,"Sugary drinks,white bread,pastries","Whole grains,leafy
+greens,lean protein,legumes"
+200,Preeclampsia,Pregnancy,Critical,"Excess sodium,processed food","Leafy greens,calcium-rich foods,lean
+protein"
+201,Hyperemesis Gravidarum,Pregnancy,High,"Greasy food,strong odors,spicy food","Ginger,bland
+crackers,small frequent meals"
+202,Pregnancy-Related Anemia,Pregnancy,Medium,Tea/coffee with meals,"Red meat,spinach,lentils,vitamin C
+fruits"
+203,Pregnancy Constipation,Pregnancy,Low,Low-fiber processed food,"Prunes,whole grains,leafy greens,water"
+204,Postpartum Recovery,Pregnancy,Medium,"Alcohol,excess caffeine","Iron-rich foods,high-protein
+foods,hydrating fluids"
+205,General Post-Surgical Recovery,Post Surgery Recovery,Medium,"Alcohol,fried food,sugary
+snacks","High-protein foods,vitamin C fruits,hydrating fluids"
+206,Bariatric Surgery (Post-Op),Post Surgery Recovery,High,"Sugary food,carbonated drinks,high-fat
+food","Small protein-rich meals,pureed vegetables,sugar-free fluids"
+207,Cardiac Surgery Recovery,Post Surgery Recovery,High,"High-sodium foods,fried food","Lean
+protein,low-sodium vegetables,whole grains"
+208,Orthopedic Surgery Recovery (Bone Healing),Post Surgery Recovery,Medium,"Excess alcohol,sugary
+snacks","Calcium-rich foods,vitamin D sources,lean protein"
+209,Colon Resection Recovery,Post Surgery Recovery,High,"Raw high-fiber vegetables initially,spicy
+food","Low-fiber cooked foods progressing to high fiber,lean protein"
+210,Tonsillectomy Recovery,Post Surgery Recovery,Medium,"Sharp crunchy foods,spicy food,citrus
+fruits","Soft cool foods,smoothies,mashed potatoes"
+211,Common Variable Immunodeficiency,Immune Disorders,High,"Raw unpasteurized food,undercooked
+meat","Well-cooked protein,fruits,vegetables,vitamin C rich foods"
+212,Chronic Fatigue Syndrome,Immune Disorders,Medium,"Caffeine,alcohol,processed sugar","Whole grains,lean
+protein,anti-inflammatory fruits and vegetables"
+213,Severe Combined Immunodeficiency (Pediatric),Immune Disorders,Critical,"Raw unpasteurized
+food,undercooked meat,unwashed produce","Well-cooked protein,thoroughly washed cooked vegetables"
+214,Recurrent Anaphylaxis Risk (Multiple Food Allergies),Immune Disorders,Critical,All identified trigger
+allergen foods,"Allergen-free whole foods,clearly labeled products"
