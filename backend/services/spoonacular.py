@@ -129,3 +129,46 @@ def search_recipes(query: str, number: int = 10):
         print("Spoonacular Search Error:", e)
 
         return []
+
+def spoonacular_to_cravewise(recipe):
+
+    nutrients = {}
+
+    for nutrient in recipe.get("nutrition", {}).get("nutrients", []):
+        nutrients[nutrient["name"]] = nutrient["amount"]
+
+    ingredients = []
+
+    for ingredient in recipe.get("extendedIngredients", []):
+        ingredients.append(ingredient["name"])
+
+    return {
+
+        "id": str(recipe.get("id")),
+
+        "name": recipe.get("title", ""),
+
+        "base_dish": recipe.get("title", "").lower(),
+
+        "ingredients": ingredients,
+
+        "calories": nutrients.get("Calories", 0),
+
+        "protein": nutrients.get("Protein", 0),
+
+        "carbs": nutrients.get("Carbohydrates", 0),
+
+        "fat": nutrients.get("Fat", 0),
+
+        "fiber": nutrients.get("Fiber", 0),
+
+        "cost": recipe.get("pricePerServing", 200) / 100,
+
+        "time_minutes": recipe.get("readyInMinutes", 30),
+
+        "difficulty": "Easy",
+
+        "diet_tags": recipe.get("diets", []),
+
+        "video_query": recipe.get("title", "")
+    }    

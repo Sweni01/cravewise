@@ -86,5 +86,45 @@
     "mexican fiesta salad pizza": {
         "image": "https://img.spoonacular.com/recipes/651624-312x231.jpg",
         "youtube": "https://www.youtube.com/watch?v=M_-xR8LKUjg"
+    },
+    "falafel burgers": {
+        "image": "https://img.spoonacular.com/recipes/642540-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=qmPdNOtNvYo"
+    },
+    "turkey burgers": {
+        "image": "https://img.spoonacular.com/recipes/664011-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=22089XW2ino"
+    },
+    "$50,000 burger": {
+        "image": "https://img.spoonacular.com/recipes/631814-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=bC7tczHfzhs"
+    },
+    "the blarney burger": {
+        "image": "https://img.spoonacular.com/recipes/663252-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=B4zNjvcXQDU"
+    },
+    "the benedict burger": {
+        "image": "https://img.spoonacular.com/recipes/663209-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=EIP2NNZILkM"
+    },
+    "feta stuffed burgers": {
+        "image": "https://img.spoonacular.com/recipes/642695-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=fF6MSGCkVrY"
+    },
+    "masala-tofu burger": {
+        "image": "https://img.spoonacular.com/recipes/651190-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=IqmGabLHiiA"
+    },
+    "tex-mex burger": {
+        "image": "https://img.spoonacular.com/recipes/663050-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=r375p4c0C0w"
+    },
+    "chicken ranch burgers": {
+        "image": "https://img.spoonacular.com/recipes/991010-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=0yi6JT-Apww"
+    },
+    "blue cheese burgers": {
+        "image": "https://img.spoonacular.com/recipes/635350-312x231.jpg",
+        "youtube": "https://www.youtube.com/watch?v=eniQpB9REg8"
     }
 }

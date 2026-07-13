@@ -16,7 +16,7 @@ from services.spoonacular import get_recipe_media
 from typing import List, Dict, Any
 from data import get_all_recipes, HEALTHY_SWAPS
 from services.spoonacular import search_recipes
-from services.recipe_mapper import spoonacular_to_cravewise
+from services.spoonacular import spoonacular_to_cravewise
 from services.health_service import get_all_conditions
 def _craving_score(recipe: Dict[str, Any], craving_text: str) -> int:
     craving_text = craving_text.lower().strip()
@@ -33,33 +33,58 @@ def _craving_score(recipe: Dict[str, Any], craving_text: str) -> int:
     return min(score, 100)
 
 
-def _health_score(recipe: Dict[str, Any], conditions: List[str], goal: str) -> int:
+def _health_score(recipe, conditions, goal):
+
     score = 60
-    conditions = [c.lower() for c in conditions]
-    tags = recipe["diet_tags"]
 
-    if "diabetes" in conditions or "diabetic" in conditions:
-        score += 20 if "diabetic_friendly" in tags else -15
-    if "pcos" in conditions:
-        score += 20 if "pcos_friendly" in tags else -10
-    
-    if goal == "weight_loss":
-        if recipe["calories"] <= 350:
-            score += 15
-        elif recipe["calories"] >= 450:
-            score -= 15
-        if "high_protein" in tags:
-            score += 10
-    elif goal == "muscle_gain":
-        if recipe["protein"] >= 25:
-            score += 20
-    elif goal == "maintenance":
-        score += 5
+    recipe_text = (
+        recipe["name"]
+        +
+        " "
+        +
+        " ".join(recipe["ingredients"])
+    ).lower()
 
-    if recipe["fiber"] >= 5:
-        score += 5
 
-    return max(0, min(score, 100))
+    for condition in conditions:
+
+        condition = condition.lower()
+
+
+        for c in get_all_conditions():
+
+            if c["name"].lower()==condition:
+
+
+                recommended = c["recommended_foods"].lower()
+
+                avoid = c["avoid_foods"].lower()
+
+
+                for food in recommended.split(","):
+
+                    if food.strip() in recipe_text:
+                        score += 5
+
+
+                for food in avoid.split(","):
+
+                    if food.strip() in recipe_text:
+                        score -= 10
+
+
+
+    if goal=="weight_loss":
+
+        if recipe["calories"] < 400:
+            score +=10
+
+
+    if recipe["protein"] >=20:
+        score+=5
+
+
+    return max(0,min(score,100))
 
 
 def _pantry_match(recipe: Dict[str, Any], pantry: List[str]):
