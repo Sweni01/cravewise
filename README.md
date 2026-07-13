@@ -20,13 +20,13 @@ Unlike traditional recipe search engines, CraveWise provides personalized recomm
 # 🚀 Live Demo
 
 Frontend:
-https://your-vercel-link.vercel.app
+https://cravewise-iono.vercel.app
 
 Backend API:
-https://your-render-link.onrender.com
+https://cravewise-backend.onrender.com
 
 GitHub:
-https://github.com/yourusername/cravewise
+https://github.com/Sweni01/cravewise
 
 ---
 
