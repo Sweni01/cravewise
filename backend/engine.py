@@ -146,7 +146,7 @@ def explain_with_llm(prompt: str) -> str:
 def recommend(profile: Dict[str, Any], craving: str, pantry: List[str],
               budget: int = None, time_limit: int = None, top_n: int = 5):
     selected_conditions = profile.get("health_conditions", [])
-    
+    print("Selected Conditions:", selected_conditions)
     condition_database = get_all_conditions()
 
     condition_info = []
@@ -160,17 +160,21 @@ def recommend(profile: Dict[str, Any], craving: str, pantry: List[str],
 
     scored = []
     recipes = search_recipes(craving, number=10)
+    print("Recipes from Spoonacular:", len(recipes))
 
-    if recipes:
+    for r in recipes[:5]:
+        print(r["name"] if "name" in r else r.get("title"))
+        if recipes:
     
-        recipes = [spoonacular_to_cravewise(r) for r in recipes]
+            recipes = [spoonacular_to_cravewise(r) for r in recipes]
     
-    else:
-    
-        recipes = get_all_recipes()
+        else:
+        
+            recipes = get_all_recipes()
     
     for recipe in recipes:
         health = _health_score(recipe, selected_conditions, goal)
+        print(recipe["name"], "Health Score:", health)
         crave = _craving_score(recipe, craving)
         pantry_pct, missing = _pantry_match(recipe, pantry)
         budget_ok, time_ok = _budget_time_fit(recipe, budget, time_limit)

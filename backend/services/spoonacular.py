@@ -10,6 +10,7 @@ load_dotenv()
 API_KEY = os.getenv("SPOONACULAR_API_KEY")
 
 BASE_URL = "https://api.spoonacular.com/recipes/complexSearch"
+INFO_URL = "https://api.spoonacular.com/recipes/{id}/information"
 
 CACHE_FILE = (
     Path(__file__).resolve().parent.parent
@@ -101,32 +102,42 @@ def get_recipe_media(recipe_name: str):
 
     return media
 
-def search_recipes(query: str, number: int = 10):
+def search_recipes(query: str, number: int = 20):
 
     try:
 
         response = requests.get(
-
             BASE_URL,
-
             params={
                 "query": query,
                 "number": number,
-                "addRecipeNutrition": True,
                 "apiKey": API_KEY
             },
-
             timeout=15
-
         )
 
-        data = response.json()
+        recipes = response.json().get("results", [])
 
-        return data.get("results", [])
+        full_recipes = []
+
+        for recipe in recipes:
+
+            info = requests.get(
+                INFO_URL.format(id=recipe["id"]),
+                params={
+                    "includeNutrition": True,
+                    "apiKey": API_KEY
+                }
+            )
+
+            if info.status_code == 200:
+                full_recipes.append(info.json())
+
+        return full_recipes
 
     except Exception as e:
 
-        print("Spoonacular Search Error:", e)
+        print(e)
 
         return []
 
