@@ -102,7 +102,7 @@ def get_recipe_media(recipe_name: str):
 
     return media
 
-def search_recipes(query: str, number: int = 20):
+def search_recipes(query: str, number: int = 5):
 
     try:
 
@@ -115,6 +115,9 @@ def search_recipes(query: str, number: int = 20):
             },
             timeout=15
         )
+
+        print("Status Code:", response.status_code)
+        print(response.text[:500])
 
         recipes = response.json().get("results", [])
 
@@ -136,9 +139,7 @@ def search_recipes(query: str, number: int = 20):
         return full_recipes
 
     except Exception as e:
-
         print(e)
-
         return []
 
 def spoonacular_to_cravewise(recipe):
